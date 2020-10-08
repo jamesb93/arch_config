@@ -1,0 +1,44 @@
+general {
+        colors = true
+        interval = 5
+        color_separator = "#1abc9c"
+}
+
+order += "wireless _first_"
+#order += "cpu_usage"
+#order += "memory"
+order += "volume master"
+order += "tztime local"
+
+wireless _first_ {
+        #format_up = "W:%quality at %essid"
+		format_up = "W"
+		format_down = "W"
+}
+
+cpu_usage {
+    format = "CPU: %usage"
+    max_threshold = 90
+    format_above_threshold = "CPU: %usage"
+}
+
+memory {
+        format = "MEM: %used | %shared" 
+		threshold_degraded = 10%
+		threshold_critical = 5%
+        format_degraded = "MEM < %available"
+}
+
+volume master {
+	    #format = "🔊 %volume"
+	    #format_muted = "🔇"
+		format = "VOL: %volume"
+		format_muted = "VOL: 0% (MUT)"
+	    device = "default"
+	    mixer = "Master"
+	    mixer_idx = 0
+}
+
+tztime local {
+        format = "%d-%m-%Y %H:%M:%S"
+}

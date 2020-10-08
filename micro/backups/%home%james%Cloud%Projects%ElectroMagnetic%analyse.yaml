@@ -1,0 +1,18 @@
+source: reaper/highgain_source/bounces
+folder: analysis
+
+analysers:
+    FluidNoveltyslice:
+        threshold: 0.47
+        minslicelength: 4096
+        cache: True
+
+    ClusteredSegmentation:
+        cache: True
+            
+    ExplodeAudio:
+        cache: True
+    
+    ClusteredNMF:
+        iterations: 20
+1
